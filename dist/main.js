@@ -42,8 +42,8 @@ const github = __importStar(require("@actions/github"));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            // The `who-to-greet` input is defined in action metadata file
-            const whoToGreet = core.getInput('who-to-greet', { required: true });
+            // The `pr-title` input is defined in action metadata file
+            const whoToGreet = core.getInput('pr-title', { required: true });
             core.info(`Hello, ${whoToGreet}!`);
             // Get the current time and set as an output
             const time = new Date().toTimeString();

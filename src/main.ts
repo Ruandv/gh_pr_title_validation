@@ -7,8 +7,8 @@ import * as github from '@actions/github';
  */
 async function run(): Promise<void> {
   try {
-    // The `who-to-greet` input is defined in action metadata file
-    const whoToGreet: string = core.getInput('who-to-greet', { required: true });
+    // The `pr-title` input is defined in action metadata file
+    const whoToGreet: string = core.getInput('pr-title', { required: true });
     core.info(`Hello, ${whoToGreet}!`);
 
     // Get the current time and set as an output
