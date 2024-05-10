@@ -8,6 +8,10 @@ inputs:
     description: What is the title of the PR?
     required: true
     default: Hello
+  regex:
+    description: What regex should we use to validate the title?
+    required: true
+    default: "^[a-z]+-[0-9]+: .*"
 
 # Define your outputs here.
 outputs:

@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "package": "rm -rf dist && npm run build && ncc build dist/index.js --license licenses.txt "
     },
     "keywords": [],
     "author": "",

@@ -10,10 +10,15 @@ async function run(): Promise<void> {
     // The `pr-title` input is defined in action metadata file
     const prTitle: string = core.getInput('pr-title', { required: true });
     core.info(`PR Title, ${prTitle}`);
-    const regExValidation = new RegExp('^[A-Z]{2,}-[0-9]{1,}: .+$');
+    const regExParam = core.getInput('regex', { required: true });
+    core.info(`Regex, ${regExParam}`);
+    const regExValidation = new RegExp(regExParam);
     
     // validate the rp title to check if it matches the regex
-    
+    if (!regExValidation.test(prTitle)) {
+      core.setFailed(`The PR title does not match the required format: ${regExParam}`);
+      return;
+    }   
 
     // Get the current time and set as an output
     const time: string = new Date().toTimeString();
