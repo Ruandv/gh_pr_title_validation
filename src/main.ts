@@ -8,8 +8,8 @@ import * as github from '@actions/github';
 async function run(): Promise<void> {
   try {
     // The `pr-title` input is defined in action metadata file
-    const whoToGreet: string = core.getInput('pr-title', { required: true });
-    core.info(`Hello, ${whoToGreet}!`);
+    const prTitle: string = core.getInput('pr-title', { required: true });
+    core.info(`PR Title, ${prTitle}!`);
 
     // Get the current time and set as an output
     const time: string = new Date().toTimeString();
