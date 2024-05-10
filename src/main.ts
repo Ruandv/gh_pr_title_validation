@@ -9,7 +9,11 @@ async function run(): Promise<void> {
   try {
     // The `pr-title` input is defined in action metadata file
     const prTitle: string = core.getInput('pr-title', { required: true });
-    core.info(`PR Title, ${prTitle}!`);
+    core.info(`PR Title, ${prTitle}`);
+    const regExValidation = new RegExp('^[A-Z]{2,}-[0-9]{1,}: .+$');
+    
+    // validate the rp title to check if it matches the regex
+    
 
     // Get the current time and set as an output
     const time: string = new Date().toTimeString();
