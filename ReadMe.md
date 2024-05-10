@@ -1,23 +1,28 @@
-# Hello world javascript action
+# PR title validation javascript action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+THis action will validate your pull request title and confirm if it matches the supplied regex
 
 ## Inputs
 
-### `who-to-greet`
+### `pr-title`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The title of the pull request.
+
+### `regex`
+
+**Required** The regex value that should be used to validate the title against.
 
 ## Outputs
 
 ### `time`
 
-The time we greeted you.
+The time we started the action.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+uses: ruandv/gh_pr_title_validation@[sha/branch/tag]
 with:
-  who-to-greet: 'Mona the Octocat'
+  pr-title: 'Mona the Octocat'
+  regex: ^[a-zA-Z]{1,30}$
 ```
