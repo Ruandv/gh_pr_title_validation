@@ -43,8 +43,10 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             // The `pr-title` input is defined in action metadata file
-            const whoToGreet = core.getInput('pr-title', { required: true });
-            core.info(`Hello, ${whoToGreet}!`);
+            const prTitle = core.getInput('pr-title', { required: true });
+            core.info(`PR Title, ${prTitle}`);
+            const regExValidation = new RegExp('^[A-Z]{2,}-[0-9]{1,}: .+$');
+            // validate the rp title to check if it matches the regex
             // Get the current time and set as an output
             const time = new Date().toTimeString();
             core.setOutput('time', time);
