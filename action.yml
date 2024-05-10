@@ -1,0 +1,19 @@
+name: PR Title Validation
+description: Validate that the title conforms to the conventional commit standards
+author: Ruan de Villiers
+
+# Define your inputs here.
+inputs:
+  pr-title:
+    description: What is the title of the PR?
+    required: true
+    default: Hello
+
+# Define your outputs here.
+outputs:
+  time:
+    description: The time we greeted you
+
+runs:
+  using: node20
+  main: dist/index.js
